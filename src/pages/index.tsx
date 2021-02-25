@@ -5,6 +5,7 @@ import { Profile } from '../components/Profile'
 import { CompletedChallengs } from '../components/CompletedChallengs'
 import { Countdown } from '../components/Countdown'
 import { ChallengeBox } from '../components/ChallengeBox'
+import { CountdownProvider } from '../contexts/CountdownContext'
 
 
 export default function Home() {
@@ -14,16 +15,19 @@ export default function Home() {
         <title>Início | move.it</title>
       </Head>
       <ExperienceBar />
-      <section>
-        <div>
-          <Profile />
-          <CompletedChallengs />
-          <Countdown />
-        </div>
-        <div>
-          <ChallengeBox />
-        </div>
-      </section>
+
+      <CountdownProvider>
+        <section>
+          <div>
+            <Profile />
+            <CompletedChallengs />
+            <Countdown />
+          </div>
+          <div>
+            <ChallengeBox />
+          </div>
+        </section>
+      </CountdownProvider>
     </div>
   )
 }
