@@ -38,6 +38,7 @@ export function CountdownProvider({children}: CountDownProviderProps) {
 
         setActive(false)
         setTime(0.05 * 60)
+        setHasFinished(false)
     }
 
     useEffect(() => {
